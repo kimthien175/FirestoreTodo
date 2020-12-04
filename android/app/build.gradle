@@ -129,6 +129,7 @@ android {
     }
 
     defaultConfig {
+        multiDexEnabled true // fix @react-native-firebase/firestore
         applicationId "com.firebasechatapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -181,6 +182,8 @@ android {
 }
 
 dependencies {
+    // fix @react-native-firebase/firestore 
+    implementation 'androidx.multidex:multidex:2.0.1'
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:26.1.1')
 
